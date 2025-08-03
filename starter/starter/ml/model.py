@@ -1,8 +1,13 @@
+'''
+The file for functions of model training
+'''
+
 from sklearn.metrics import fbeta_score, precision_score, recall_score
+from sklearn.ensemble import RandomForestClassifier
 
 
 # Optional: implement hyperparameter tuning.
-def train_model(X_train, y_train):
+def train_model(X_train, y_train,params):
     """
     Trains a machine learning model and returns it.
 
@@ -17,8 +22,16 @@ def train_model(X_train, y_train):
     model
         Trained machine learning model.
     """
+    clf = RandomForestClassifier(n_estimators = params["n_estimators"],
+                                 max_depth = params["max_depth"],
+                                 min_samples_split=params["min_samples_split"],
+                                 min_samples_leaf=params["min_samples_leaf"],
+                                 max_features=params["max_features"],
+                                 n_jobs=params["n_jobs"],
+                                 random_state=params["random_seed"])
+    clf.fit(X_train,y_train)
 
-    pass
+    return clf
 
 
 def compute_model_metrics(y, preds):
@@ -57,4 +70,20 @@ def inference(model, X):
     preds : np.array
         Predictions from the model.
     """
-    pass
+    pred = model.predict(X)
+    return pred
+
+def slice_performance(test,y_test,preds,feature):
+
+    for cls in test[feature].unique():
+        print("class:",cls)
+        y_slice = y_test[test[feature]==cls]
+        preds_slice = preds[test[feature]==cls]
+        precision, recall, fbeta = compute_model_metrics(y_slice,preds_slice)
+        print(f"precision: {precision}, recall: {recall}, fbeta: {fbeta}")
+
+        
+
+
+
+
