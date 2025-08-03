@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from ml.model import train_model, compute_model_metrics,inference
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__))))
 
 @pytest.fixture(scope="session")
 def params():
