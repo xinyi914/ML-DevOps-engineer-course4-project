@@ -6,10 +6,11 @@ from yaml import CLoader as Loader
 
 # Add the necessary imports for the starter code.
 from sklearn.ensemble import RandomForestClassifier
-from starter.starter.ml.model import train_model, compute_model_metrics,inference
-# import sys
-# import os
-# sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__))))
+
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__))))
+from ml.model import train_model, compute_model_metrics,inference
 
 @pytest.fixture(scope="session")
 def params():
