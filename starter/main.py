@@ -14,34 +14,20 @@ import joblib
 app = FastAPI()
 
 class InputData(BaseModel):
-    # age: Union[int,List[int]]
-    # workclass: Union[str,List[str]]
-    # fnlgt: Union[int,List[int]]
-    # education: Union[str,List[str]]
-    # education_num: Union[int,List[int]] = Field(...,alias="education-num")
-    # marital_status:Union[str,List[str]]= Field(...,alias="marital-status")
-    # occupation: Union[str,List[str]]
-    # relationship: Union[str,List[str]]
-    # race: Union[str,List[str]]
-    # sex: Union[str,List[str]]
-    # capital_gain: Union[int,List[int]] = Field(...,alias="capital-gain")
-    # capital_loss: Union[int,List[int]] = Field(...,alias="capital-loss")
-    # hours_per_week: Union[int,List[int]]
-    # native_country: Union[str,List[str]]
-    age: List[int]
-    workclass: List[str]
-    fnlgt: List[int]
-    education: List[str]
-    education_num: List[int] = Field(...,alias="education-num")
-    marital_status:List[str]= Field(...,alias="marital-status")
-    occupation: List[str]
-    relationship: List[str]
-    race: List[str]
-    sex: List[str]
-    capital_gain: List[int] = Field(...,alias="capital-gain")
-    capital_loss: List[int] = Field(...,alias="capital-loss")
-    hours_per_week: List[int] = Field(...,alias="hours-per-week")
-    native_country: List[str] = Field(...,alias="native-country")
+    age: List[int] = Field(default=None,examples=[30])
+    workclass: List[str] = Field(default=None,examples=["Private"])
+    fnlgt: List[int] = Field(default=None,examples=[13453])
+    education: List[str] = Field(default=None,examples=["Bachelors"])
+    education_num: List[int] = Field(default=None,alias="education-num",examples=[8])
+    marital_status:List[str]= Field(default=None,alias="marital-status",examples = ["Divorced"])
+    occupation: List[str] = Field(default=None,examples=["Tech-suuport"])
+    relationship: List[str] = Field(default=None,examples=["Wife"])
+    race: List[str] = Field(default=None,examples=["White"])
+    sex: List[str] = Field(default=None,examples=["Female"])
+    capital_gain: List[int] = Field(default=None,alias="capital-gain",examples = [0])
+    capital_loss: List[int] = Field(default=None,alias="capital-loss",examples = [0])
+    hours_per_week: List[int] = Field(default=None,alias="hours-per-week",examples = [40])
+    native_country: List[str] = Field(default=None,alias="native-country",examples = ["United-States"])
     class Config:
         validate_by_name = True  # Allows you to use 'education_num' in code, 'education-num' in JSON
         allow_population_by_alias = True 
