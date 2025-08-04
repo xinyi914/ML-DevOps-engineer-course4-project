@@ -1,0 +1,117 @@
+Feature: workclass
+Private: precision: 0.82, recall: 0.52, F-beta: 0.64
+Self-emp-not-inc: precision: 0.65, recall: 0.51, F-beta: 0.57
+Local-gov: precision: 0.78, recall: 0.67, F-beta: 0.72
+Self-emp-inc: precision: 0.86, recall: 0.72, F-beta: 0.78
+Federal-gov: precision: 0.89, recall: 0.60, F-beta: 0.72
+State-gov: precision: 0.88, recall: 0.70, F-beta: 0.78
+?: precision: 0.71, recall: 0.54, F-beta: 0.61
+Never-worked: precision: 1.00, recall: 1.00, F-beta: 1.00
+Without-pay: precision: 1.00, recall: 1.00, F-beta: 1.00
+
+Feature: education
+11th: precision: 1.00, recall: 0.25, F-beta: 0.40
+Prof-school: precision: 0.88, recall: 0.87, F-beta: 0.88
+Some-college: precision: 0.88, recall: 0.31, F-beta: 0.46
+HS-grad: precision: 0.92, recall: 0.24, F-beta: 0.38
+5th-6th: precision: 1.00, recall: 0.00, F-beta: 0.00
+7th-8th: precision: 0.50, recall: 0.12, F-beta: 0.20
+Assoc-voc: precision: 0.88, recall: 0.43, F-beta: 0.58
+Bachelors: precision: 0.73, recall: 0.84, F-beta: 0.78
+Masters: precision: 0.82, recall: 0.83, F-beta: 0.83
+12th: precision: 1.00, recall: 0.29, F-beta: 0.44
+Assoc-acdm: precision: 0.90, recall: 0.42, F-beta: 0.57
+10th: precision: 1.00, recall: 0.30, F-beta: 0.46
+9th: precision: 1.00, recall: 0.00, F-beta: 0.00
+1st-4th: precision: 1.00, recall: 0.00, F-beta: 0.00
+Doctorate: precision: 0.88, recall: 0.98, F-beta: 0.93
+Preschool: precision: 1.00, recall: 1.00, F-beta: 1.00
+
+Feature: marital-status
+Married-civ-spouse: precision: 0.80, recall: 0.60, F-beta: 0.69
+Widowed: precision: 1.00, recall: 0.35, F-beta: 0.52
+Never-married: precision: 0.95, recall: 0.34, F-beta: 0.50
+Separated: precision: 1.00, recall: 0.40, F-beta: 0.57
+Married-spouse-absent: precision: 0.50, recall: 0.50, F-beta: 0.50
+Divorced: precision: 0.88, recall: 0.31, F-beta: 0.46
+Married-AF-spouse: precision: 1.00, recall: 0.00, F-beta: 0.00
+
+Feature: occupation
+Other-service: precision: 1.00, recall: 0.12, F-beta: 0.22
+Prof-specialty: precision: 0.84, recall: 0.78, F-beta: 0.81
+Protective-serv: precision: 0.88, recall: 0.49, F-beta: 0.63
+Craft-repair: precision: 0.83, recall: 0.30, F-beta: 0.44
+Sales: precision: 0.78, recall: 0.58, F-beta: 0.67
+Exec-managerial: precision: 0.82, recall: 0.74, F-beta: 0.78
+Adm-clerical: precision: 0.82, recall: 0.41, F-beta: 0.55
+Transport-moving: precision: 0.59, recall: 0.17, F-beta: 0.26
+Machine-op-inspct: precision: 0.60, recall: 0.24, F-beta: 0.35
+?: precision: 0.71, recall: 0.54, F-beta: 0.61
+Tech-support: precision: 0.84, recall: 0.39, F-beta: 0.53
+Handlers-cleaners: precision: 0.70, recall: 0.29, F-beta: 0.41
+Farming-fishing: precision: 0.48, recall: 0.32, F-beta: 0.38
+Priv-house-serv: precision: 1.00, recall: 1.00, F-beta: 1.00
+Armed-Forces: precision: 1.00, recall: 1.00, F-beta: 1.00
+
+Feature: relationship
+Other-relative: precision: 0.00, recall: 0.00, F-beta: 0.00
+Not-in-family: precision: 0.91, recall: 0.34, F-beta: 0.50
+Own-child: precision: 1.00, recall: 0.33, F-beta: 0.50
+Unmarried: precision: 1.00, recall: 0.30, F-beta: 0.47
+Husband: precision: 0.80, recall: 0.60, F-beta: 0.69
+Wife: precision: 0.78, recall: 0.61, F-beta: 0.69
+
+Feature: race
+White: precision: 0.81, recall: 0.56, F-beta: 0.66
+Black: precision: 0.80, recall: 0.52, F-beta: 0.63
+Asian-Pac-Islander: precision: 0.76, recall: 0.66, F-beta: 0.70
+Other: precision: 0.80, recall: 0.57, F-beta: 0.67
+Amer-Indian-Eskimo: precision: 0.75, recall: 0.60, F-beta: 0.67
+
+Feature: sex
+Male: precision: 0.80, recall: 0.57, F-beta: 0.67
+Female: precision: 0.82, recall: 0.52, F-beta: 0.63
+
+Feature: native-country
+United-States: precision: 0.81, recall: 0.56, F-beta: 0.66
+Puerto-Rico: precision: 1.00, recall: 1.00, F-beta: 1.00
+India: precision: 0.73, recall: 0.73, F-beta: 0.73
+England: precision: 0.57, recall: 0.67, F-beta: 0.62
+South: precision: 0.20, recall: 0.50, F-beta: 0.29
+Mexico: precision: 0.67, recall: 0.18, F-beta: 0.29
+Philippines: precision: 1.00, recall: 0.79, F-beta: 0.88
+Ecuador: precision: 0.00, recall: 0.00, F-beta: 0.00
+Taiwan: precision: 1.00, recall: 1.00, F-beta: 1.00
+El-Salvador: precision: 1.00, recall: 1.00, F-beta: 1.00
+?: precision: 0.69, recall: 0.62, F-beta: 0.65
+China: precision: 0.50, recall: 1.00, F-beta: 0.67
+Poland: precision: 0.00, recall: 0.00, F-beta: 0.00
+Germany: precision: 0.67, recall: 0.40, F-beta: 0.50
+Jamaica: precision: 1.00, recall: 1.00, F-beta: 1.00
+Canada: precision: 0.75, recall: 0.75, F-beta: 0.75
+Outlying-US(Guam-USVI-etc): precision: 1.00, recall: 1.00, F-beta: 1.00
+Iran: precision: 0.67, recall: 1.00, F-beta: 0.80
+Nicaragua: precision: 1.00, recall: 1.00, F-beta: 1.00
+Laos: precision: 1.00, recall: 1.00, F-beta: 1.00
+Greece: precision: 0.00, recall: 0.00, F-beta: 0.00
+Guatemala: precision: 1.00, recall: 1.00, F-beta: 1.00
+Japan: precision: 1.00, recall: 0.50, F-beta: 0.67
+Italy: precision: 1.00, recall: 0.50, F-beta: 0.67
+Cuba: precision: 1.00, recall: 0.60, F-beta: 0.75
+Dominican-Republic: precision: 1.00, recall: 1.00, F-beta: 1.00
+Haiti: precision: 1.00, recall: 1.00, F-beta: 1.00
+Scotland: precision: 1.00, recall: 1.00, F-beta: 1.00
+Vietnam: precision: 1.00, recall: 0.50, F-beta: 0.67
+Columbia: precision: 1.00, recall: 1.00, F-beta: 1.00
+Hungary: precision: 1.00, recall: 1.00, F-beta: 1.00
+Portugal: precision: 1.00, recall: 1.00, F-beta: 1.00
+Peru: precision: 1.00, recall: 1.00, F-beta: 1.00
+Cambodia: precision: 1.00, recall: 1.00, F-beta: 1.00
+Thailand: precision: 1.00, recall: 1.00, F-beta: 1.00
+Yugoslavia: precision: 0.50, recall: 1.00, F-beta: 0.67
+Hong: precision: 1.00, recall: 0.00, F-beta: 0.00
+Honduras: precision: 1.00, recall: 1.00, F-beta: 1.00
+Ireland: precision: 1.00, recall: 1.00, F-beta: 1.00
+Trinadad&Tobago: precision: 1.00, recall: 1.00, F-beta: 1.00
+France: precision: 0.00, recall: 1.00, F-beta: 0.00
+
