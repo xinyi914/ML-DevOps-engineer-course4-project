@@ -71,10 +71,12 @@ async def predict(data: InputData):
     else:
         df = pd.DataFrame([input_dict])
     print("download encoder, lb")
-    encoder = joblib.load("starter/encoder.joblib")
-    lb = joblib.load("starter/label_binarizer.joblib")
-
-    model = joblib.load("starter/model.pkl")
+    path_encoder = os.path.join(os.path.dirname(__file__), "starter/encoder.joblib")
+    path_lb = os.path.join(os.path.dirname(__file__), "starter/label_binarizer.joblib")
+    path_model = os.path.join(os.path.dirname(__file__), "starter/model.pkl")
+    encoder = joblib.load(path_encoder)
+    lb = joblib.load(path_lb)
+    model = joblib.load(path_model)
     print("process data")
     X,_,_,_ = process_data(
     df, categorical_features=cat_features, label=None, encoder = encoder, training=False, lb=lb)
