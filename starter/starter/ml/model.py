@@ -74,13 +74,15 @@ def inference(model, X):
     return pred
 
 def slice_performance(test,y_test,preds,feature):
-
+    output = {}
     for cls in test[feature].unique():
         print("class:",cls)
         y_slice = y_test[test[feature]==cls]
         preds_slice = preds[test[feature]==cls]
         precision, recall, fbeta = compute_model_metrics(y_slice,preds_slice)
-        print(f"precision: {precision}, recall: {recall}, fbeta: {fbeta}")
+        print(f"precision: {precision:.2f}, recall: {recall:.2f}, fbeta: {fbeta:.2f}")
+        output[cls] = [precision,recall,fbeta]
+    return output
 
         
 

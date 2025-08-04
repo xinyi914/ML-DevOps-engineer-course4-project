@@ -15,7 +15,7 @@ Evaluation data accounts for 20% of the whole dataset. The categorical features 
 
 ## Metrics
 _Please include the metrics used and your model's performance on those metrics._
-The metrics used are precision, recall, and F-beta score. The model has precision 0.81, recall: 0.57, and F-beta score: 0.67
+The metrics used are precision, recall, and F-beta score. The model has precision 0.81, recall: 0.56, and F-beta score: 0.66
 
 ## Ethical Considerations
 Risk: We risk expressing the viewpoint that the attributes in this dataset are the only ones that are predictive of someone's income, even though we this is not the case.

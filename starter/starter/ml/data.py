@@ -53,10 +53,9 @@ def process_data(
         X = X.drop([label], axis=1)
     else:
         y = np.array([])
-
+    print(X.shape)
     X_categorical = X[categorical_features].values
     X_continuous = X.drop(*[categorical_features], axis=1)
-
     if training is True:
         encoder = OneHotEncoder(sparse_output=False, handle_unknown="ignore")
         lb = LabelBinarizer()
@@ -69,6 +68,8 @@ def process_data(
         # Catch the case where y is None because we're doing inference.
         except AttributeError:
             pass
-
+    
+    print(X_categorical.shape)
+    print(X_continuous.shape)
     X = np.concatenate([X_continuous, X_categorical], axis=1)
     return X, y, encoder, lb

@@ -27,7 +27,7 @@ logger = logging.getLogger()
 # df_clean.to_csv("../data/census_clean.csv")
 # Add code to load in the data.
 logger.info("Load clean data")
-data = pd.read_csv("../data/census_clean.csv")
+data = pd.read_csv("../data/census_clean.csv",index_col=0)
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 logger.info("Split clean data")
@@ -53,18 +53,34 @@ X_train, y_train, encoder, lb = process_data(
 logger.info("Train and saving model")
 clf = train_model(X_train,y_train,params)
 joblib.dump(clf,"model.pkl")
+joblib.dump(encoder,"encoder.joblib")
+joblib.dump(lb,"label_binarizer.joblib")
+
+
+clf= joblib.load("model.pkl")
+encoder = joblib.load("encoder.joblib")
+lb = joblib.load("label_binarizer.joblib")
 
 # Inference
-X_test, y_test, encoder, lb = process_data(
+# test_x = test.drop(columns=["salary"])
+# print(test_x.columns)
+# print(test_x.shape)
+X_test,y_test, encoder, lb = process_data(
     test, categorical_features=cat_features, label="salary", encoder = encoder, training=False, lb=lb
 )
+# print(X_test.shape)
 
 preds = inference(clf,X_test)
 precision, recall, fbeta = compute_model_metrics(y_test,preds)
 print("test results: ")
 print(f"precision: {precision}, recall: {recall}, fbeta: {fbeta}")
 
-for cat_fea in cat_features:
-    print(f"feature: {cat_fea}")
-    slice_performance(test,y_test,preds,cat_fea)
+with open("slice_output.txt","w") as f:
+    for cat_fea in cat_features:
+        print(f"feature: {cat_fea}")
+        slice_result = slice_performance(test,y_test,preds,cat_fea)
+        f.write(f"Feature: {cat_fea}\n")
+        for key,value in slice_result.items():
+            f.write(f"{key}: precision: {value[0]:.2f}, recall: {value[1]:.2f}, F-beta: {value[2]:.2f}\n")
+        f.write("\n")
 
