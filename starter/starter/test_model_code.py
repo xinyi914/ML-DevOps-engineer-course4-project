@@ -14,7 +14,7 @@ from ml.model import train_model, compute_model_metrics,inference
 
 @pytest.fixture(scope="session")
 def params():
-    with open("./param.yaml") as f:
+    with open("param.yaml") as f:
         params = yaml.load(f,Loader=Loader)
     return params
 
